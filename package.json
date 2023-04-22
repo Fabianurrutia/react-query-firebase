@@ -4,7 +4,7 @@
   "description": "React Query hooks for Firebase.",
   "keywords": [
     "react",
-    "react-query",
+    "@tanstack/react-query",
     "firebase",
     "hooks"
   ],
@@ -41,7 +41,7 @@
     "prettier": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.23.2",
+    "@tanstack/react-query": "^3.23.2",
     "react-test-renderer": "^18.2.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.63.0",

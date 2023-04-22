@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider ,useQueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import {
   useFunctionsQuery,
   useFunctionsCall,
 } from "@react-query-firebase/functions";
 import { functions } from "./firebase";
-import { useQueryClient } from "react-query";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +19,7 @@ function Example() {
     onSuccess(joke) {
       client.setQueryData("joke", joke);
     },
-  });
+});
 
   if (query.isLoading) {
     return <div>Loading joke...</div>;
