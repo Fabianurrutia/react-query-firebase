@@ -1,14 +1,7 @@
 import React from "react";
-import { QueryClient, QueryClientProvider, setLogger } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { initializeApp } from "firebase/app";
 import { connectDatabaseEmulator, getDatabase } from "firebase/database";
-
-setLogger({
-  log: console.log,
-  warn: console.warn,
-  // ✅ no more errors on the console
-  error: () => null,
-});
 
 let emulatorsStarted = false;
 
@@ -37,6 +30,12 @@ export function init(): any {
         cacheTime: 0,
       },
     },
+    logger: {
+      log: console.log,
+      warn: console.warn,
+      // ✅ no more errors on the console
+      error: () => null,
+    }
   });
 
   const wrapper = ({ children }) => (
